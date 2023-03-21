@@ -52,6 +52,11 @@ class License extends Depreciable
         'purchase_date'   => 'date_format:Y-m-d|nullable',
         'expiration_date'   => 'date_format:Y-m-d|nullable',
         'termination_date'   => 'date_format:Y-m-d|nullable',
+        'is_subscription' => 'boolean|nullable',
+        'subscription_seat_price' => 'numeric|nullable|gte:0',
+        'subscription_period' => 'string|nullable',
+        'subscription_length' => 'integer|nullable|gte:0',
+        'auto_renew' => 'boolean|nullable',
     ];
 
     /**
@@ -80,6 +85,11 @@ class License extends Depreciable
         'supplier_id',
         'termination_date',
         'user_id',
+        'is_subscription' => 'boolean|nullable',
+        'subscription_seat_price' => 'numeric|nullable|gte:0',
+        'subscription_period' => 'string|nullable',
+        'subscription_length' => 'integer|nullable|gte:0',
+        'auto_renew' => 'boolean|nullable',
     ];
 
     use Searchable;
@@ -98,6 +108,11 @@ class License extends Depreciable
         'purchase_cost',
         'purchase_date',
         'expiration_date',
+        'is_subscription',
+        'subscription_period',
+        'subscription_length',
+        'subscription_seat_price',
+        'auto_renew',
     ];
 
     /**

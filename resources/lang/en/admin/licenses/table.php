@@ -13,5 +13,6 @@ return array(
     'hardware'   		=> 'Hardware',
     'serial'   			=> 'Serial',
     'title'      		=> 'License',
+    'is_subscription'      		=> 'Type',
 
 );

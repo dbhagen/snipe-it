@@ -36,6 +36,12 @@ class LicensePresenter extends Presenter
                 'title' => trans('admin/licenses/table.title'),
                 'formatter' => 'licensesLinkFormatter',
             ], [
+                'field' => 'is_subscription',
+                'searchable' => true,
+                'sortable' => true,
+                'title' => trans('admin/licenses/table.is_subscription'),
+                // 'formatter' => 'licensesLinkFormatter',
+            ], [
                 'field' => 'product_key',
                 'searchable' => true,
                 'sortable' => true,

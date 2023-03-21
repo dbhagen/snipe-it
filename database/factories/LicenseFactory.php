@@ -52,8 +52,35 @@ class LicenseFactory extends Factory
             'reassignable' => $this->faker->boolean(),
             'termination_date' => $this->faker->dateTimeBetween('-1 years', 'now', date_default_timezone_get())->format('Y-m-d H:i:s'),
             'supplier_id' => $this->faker->numberBetween(1, 5),
-            'category_id' => Category::where('category_type', '=', 'license')->inRandomOrder()->first()->id
+            'category_id' => Category::where('category_type', '=', 'license')->inRandomOrder()->first()->id,
+            'is_subscription' => $this->faker->boolean(),
+            'subscription_seat_price' => $this->faker->randomFloat(2, 0, 100),
+            'subscription_period' => $this->faker->randomElement(['monthly', 'yearly']),
+            'subscription_length' => $this->faker->numberBetween(1, 12),
+            'auto_renew' => $this->faker->boolean()
         ];
+    }
+
+    public function adobeCreativeCloud()
+    {
+        return $this->state(function () {
+            $data = [
+                'name' => 'Adobe Creative Cloud',
+                'manufacturer_id' => 9,
+                'purchase_cost' => '849.90',
+                'seats' => 10,
+                'purchase_order' => '13503Q',
+                'maintained' => true,
+                'category_id' => 14,
+                'is_subscription' => true,
+                'subscription_period' => 'monthly',
+                'subscription_start_date' => '2019-01-07',
+                'subscription_length' => 12,
+                'auto_renew' => true,
+            ];
+
+            return $data;
+        });
     }
 
     public function photoshop()
